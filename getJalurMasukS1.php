@@ -6,7 +6,6 @@
               $lokasi = isset($_POST['lokasi']) ? $_POST['lokasi'] : '';
               $periode_pendaftaran = isset($_POST['periode_pendaftaran']) ? $_POST['periode_pendaftaran'] : '';
               $jenis_pendaftaran = isset($_POST['jenis_pendaftaran']) ? $_POST['jenis_pendaftaran'] : '';
-              $gelombang = isset($_POST['gelombang']) ? $_POST['gelombang'] : '';
               $now = date('Y-m-d');
 
               if ($jenis_pendaftaran === 'Pindahan') {
@@ -25,7 +24,7 @@
                 and psd.id_program_studi = $id_prodi
                 and psd.sistem_kuliah LIKE '%$lokasi%'
                 and psd.nama_periode_pendaftaran like '%$periode_pendaftaran%'
-                and psd.id_gelombang = $gelombang
+                and pp.status_periode_pendaftaran = 'Aktif'
                 and pp.tanggal_akhir_pendaftaran >= '$now'
                 $sql_jenis_pendaftaran
               ";

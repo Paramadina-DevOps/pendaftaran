@@ -253,7 +253,7 @@
 
     <script type="module">
       $(document).ready(function () {
-        const gelombang = 1;
+        const gelombang = 2;
         // const semesterMulai = "Semester Ganjil 2025";
         // const semesterSelesai = "Semester Genap 2025";
 
@@ -721,11 +721,11 @@
                     ];
 
                     // Jalur khusus yang hanya ditampilkan dalam kategori tertentu
-                    const specialNames = ["Beasiswa KIP Kuliah", "Beasiswa Kerjasama Perusahaan"];
+                    const specialNames = ["Beasiswa KIP Kuliah", "Beasiswa Kerjasama Perusahaan", "Beasiswa Gojek-Paramadina"];
                     const shouldHideJalurBeasiswa = data.some(jalurMasuk => 
                       (jalurMasuk.jalur_pendaftaran === "Jalur SMA/SMK" || 
                       jalurMasuk.jalur_pendaftaran === "Beasiswa Kerjasama Perusahaan" || 
-                      jalurMasuk.jalur_pendaftaran === "Pindahan" || 
+                      jalurMasuk.jalur_pendaftaran === "Pindahan" ||
                       jalurMasuk.jalur_pendaftaran === "Alih Jenjang (D3 ke S1)") &&
                       (waktuPerkuliahan === "S1 Kelas B (18.30 - 21.00 WIB) + Online (Sabtu)" || 
                       waktuPerkuliahan === "S1 Kelas C (Sabtu Sesi 1) + Online (On Weekdays)" || 
@@ -755,6 +755,10 @@
                     if (shouldHideJalurKhusus || shouldHideKhususInJenjang) {
                       $("#jalur-khusus-inline").hide();
                     } else {
+                      $("#jalur-khusus-inline").show();
+                    }
+
+                    if (data.some(j => j.jalur_pendaftaran === "Beasiswa Gojek-Paramadina")) {
                       $("#jalur-khusus-inline").show();
                     }
 
