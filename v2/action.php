@@ -125,7 +125,7 @@ $data = $_POST; // sama seperti request()->all()
 $result = sendRegistrationSuccessEmail('muhammad.pawit@paramadina.ac.id', $data['nama_lengkap']);
 if ($result === true) {
     // Redirect ke halaman lain dengan query param notif
-    header("Location: https://admission.paramadina.ac.id/v2/?status=success&msg=" . urlencode("Email berhasil dikirim!"));
+    header("Location: https://admission.paramadina.ac.id/v2/?status=success&msg=" . urlencode("Data berhasil disubmit. Terimakasih ! Silakan cek email Anda untuk informasi selanjutnya."));
     exit;
 } else {
     // Tampilkan error

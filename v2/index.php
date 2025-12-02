@@ -132,6 +132,28 @@
         method="POST"
       > -->
       <form id="registration-form" method="POST" action="action.php">
+        <?php
+// Cek apakah ada query parameter
+$status = $_GET['status'] ?? '';
+$msg = $_GET['msg'] ?? '';
+?>
+
+<?php if($status === 'success' && $msg): ?>
+    <div style="
+        background-color: #d0ffe3ff;
+        color: #004085;
+        border: 1px solid #b8daff;
+        padding: 15px 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    ">
+        <?php echo htmlspecialchars(urldecode($msg)); ?>
+    </div>
+<?php endif; ?>
+
         <div>
           <h1 class="text-gelombang" id="text-gelombang"></h1>
           <!-- <p class="text-semester" id="text-semester"></p> -->
