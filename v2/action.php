@@ -11,7 +11,7 @@ function sendRegistrationSuccessEmail($toEmail, $toName) {
     try {
         // Server settings
         $mail->isSMTP();
-        $mail->Host       = 'smtp.paramadina.ac.id';
+        $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'noreply2@paramadina.ac.id';
         $mail->Password   = 'emnernfyllripnkl'; // Gunakan App Password Gmail
