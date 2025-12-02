@@ -303,7 +303,7 @@
         // const semesterMulai = "Semester Ganjil 2025";
         // const semesterSelesai = "Semester Genap 2025";
 
-        $("#text-gelombang").text(`Gelombang ${gelombang}`);
+        $("#text-gelombang").text(`Testing ${gelombang}`);
         // $("#text-semester").text(`${semesterMulai} - ${semesterSelesai}`);
         
         // GET JENJANG
