@@ -17,8 +17,6 @@ function sendRegistrationSuccessEmail($toEmail, $toName) {
         $mail->Password   = 'emnernfyllripnkl'; // Gunakan App Password Gmail
         $mail->SMTPSecure = 'ssl';
         $mail->Port       = 465;
-        $mail->SMTPDebug = 2; // atau 3 untuk debug lebih detail
-        $mail->Debugoutput = 'html';
 
         // Recipients
         $mail->setFrom('noreply2@paramadina.ac.id', 'Portal Pendaftaran Universitas Paramadina');
