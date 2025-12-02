@@ -118,7 +118,7 @@
     <div class="hero-section">
       <div class="hero-content">
         <h1 class="hero-title">
-          Portal Pendaftaran Mahasiswa Baru
+          Portal Pendaftaran Mahasiswa Baru V2 Testing
         </h1>
         <p class="hero-subtitle">
           Formulir pendaftaran mahasiswa baru di Universitas Paramadina.
