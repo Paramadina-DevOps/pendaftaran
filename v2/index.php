@@ -140,7 +140,7 @@ $msg = $_GET['msg'] ?? '';
 
 <?php if($status === 'success' && $msg): ?>
     <div style="
-        background-color: #d0ffe3ff;
+        background-color: #cce5ff;
         color: #004085;
         border: 1px solid #b8daff;
         padding: 15px 20px;
