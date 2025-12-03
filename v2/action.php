@@ -54,7 +54,7 @@ $apiResponse = postJson(
 
 // 3. Redirect sesuai hasil
 if (!empty($apiResponse['success']) && $apiResponse['success'] === true) {
-    header("Location: https://admission.paramadina.ac.id/v2/?status=success&msg=" . urlencode("Data berhasil disubmit. Terimakasih!"));
+    header("Location: https://admission.paramadina.ac.id/v2/?status=success&msg=" . urlencode("Data berhasil disubmit. Silahkan cek inbox email Anda untuk informasi selanjutnya. Terimakasih!"));
     exit;
 } else {
     $msg = $apiResponse['message'] ?? 'Gagal mengirim data ke API.';
