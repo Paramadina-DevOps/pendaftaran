@@ -11,10 +11,11 @@
                 where jenjang_program_studi = '$jenjang'
                 and id_program_studi = $id_prodi
                 and sistem_kuliah LIKE '%$lokasi%'
+                
                 group by jalur_pendaftaran
               ";
               $result = mysqli_query($conn, $sql);
-                // Jika query berhasil
+                // Jika query berhasil and jalur_pendaftaran NOT LIKE '%RPL%'
                 if ($result) {
                     // Ambil semua hasil sebagai array multidimensi
                     $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);

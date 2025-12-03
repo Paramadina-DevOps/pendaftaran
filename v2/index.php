@@ -575,8 +575,8 @@ $msg = $_GET['msg'] ?? '';
               },
               success: function (response) {
                 const data = JSON.parse(response);
-
-                const allJalurPendaftaran = ['Jalur SMA/SMK', 'Pindahan', 'RPL Transfer SKS', 'RPL Perolehan SKS'];
+                // , 'RPL Transfer SKS', 'RPL Perolehan SKS' nanti ditampilin, untuk v2 ini di hide dlu
+                const allJalurPendaftaran = ['Jalur SMA/SMK', 'Pindahan'];
 
                 const jenisPendaftaranOptions = $("#jenis-pendaftaran-options");
                 jenisPendaftaranOptions.empty();
