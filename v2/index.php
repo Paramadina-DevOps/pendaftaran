@@ -63,6 +63,23 @@
       .form-control:focus {
           border-color: #007bff; /* warna biru fokus */
       }
+
+
+      .loader {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #3498db;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        animation: spin 1s linear infinite;
+        display: inline-block;
+        margin-right: 6px;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     </style>
   </head>
   <body>
@@ -138,21 +155,45 @@ $status = $_GET['status'] ?? '';
 $msg = $_GET['msg'] ?? '';
 ?>
 
-<?php if($status === 'success' && $msg): ?>
-    <div style="
-        background-color: #cce5ff;
-        color: #004085;
-        border: 1px solid #b8daff;
+<?php if(($status === 'success' || $status === 'error') && $msg): ?>
+    <div id="notif" style="
+        background-color: <?php echo $status === 'success' ? '#d4edda' : '#f8d7da'; ?>;
+        color: <?php echo $status === 'success' ? '#155724' : '#721c24'; ?>;
+        border: 1px solid <?php echo $status === 'success' ? '#c3e6cb' : '#f5c6cb'; ?>;
         padding: 15px 20px;
         margin: 20px auto;
         max-width: 600px;
         border-radius: 5px;
         font-family: Arial, sans-serif;
         text-align: center;
+        transition: opacity 0.5s ease;
+        position: relative;
     ">
-        <?php echo htmlspecialchars(urldecode($msg)); ?>
+        <span id="notif-msg"><?php echo htmlspecialchars(urldecode($msg)); ?></span>
+        <span id="notif-countdown" style="margin-left: 10px; font-weight: bold;">5</span>
     </div>
+
+    <script>
+        let countdown = 5;
+        const countdownEl = document.getElementById('notif-countdown');
+        const notif = document.getElementById('notif');
+
+        const interval = setInterval(() => {
+            countdown--;
+            if(countdownEl) countdownEl.textContent = countdown;
+
+            if(countdown <= 0) {
+                clearInterval(interval);
+                if(notif) {
+                    notif.style.opacity = '0'; // fade out
+                    setTimeout(() => notif.remove(), 500); // hapus setelah fade out
+                }
+            }
+        }, 1000);
+    </script>
 <?php endif; ?>
+
+
 
         <div>
           <h1 class="text-gelombang" id="text-gelombang"></h1>
@@ -272,7 +313,7 @@ $msg = $_GET['msg'] ?? '';
             <input type="hidden" id="key" name="key" />
             <input type="hidden" id="prodipilihan" name="prodipilihan" />
             <input type="hidden" name="act" value="detail" />
-            <button class="register-btn" id="register-btn">Daftar Sekarang</button>
+            <button class="register-btn" id="register-btn" type="submit">Daftar Sekarang</button>
           </div>
         </div>
       </form>
@@ -1142,6 +1183,21 @@ $msg = $_GET['msg'] ?? '';
     <script>
       document.querySelector('.menu-toggle').addEventListener('click', function() {
         document.querySelector('.main-nav').classList.toggle('active');
+      });
+
+      document.getElementById('registration-form').addEventListener('submit', function(e) {
+          const btn = document.getElementById('register-btn');
+
+          // tampilkan loader + disable tombol
+          btn.disabled = true;
+          btn.innerHTML = `<span class="loader"></span> Memproses...`;
+
+          // delay submit
+          e.preventDefault(); // hentikan submit dulu
+
+          setTimeout(() => {
+              this.submit(); // submit ulang setelah delay
+          }, 800); // delay 800ms, bisa disesuaikan
       });
     </script>
   </body>
