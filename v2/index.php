@@ -265,19 +265,19 @@ $msg = $_GET['msg'] ?? '';
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label>Nama Lengkap</label>
+                        <label>Nama Lengkap <span class="required">*</span></label>
                         <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" required />
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label>Nomor Hp/Whatsapp</label>
+                        <label>Nomor Hp/Whatsapp <span class="required">*</span></label>
                         <input type="text" class="form-control" name="nomor_hp" id="nomor_hp" required />
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label>Email</label>
+                        <label>Email <span class="required">*</span></label>
                         <input type="email" class="form-control" name="email" id="email" required />
                     </div>
                 </div>
