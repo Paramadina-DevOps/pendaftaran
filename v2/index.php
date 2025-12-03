@@ -708,9 +708,13 @@ $msg = $_GET['msg'] ?? '';
                             class="radio-input"
                             ${WaktuKuliahAvailable ? '' : 'disabled'}
                           >
-                          <label for="waktu-perkuliahan-${WaktuKuliah}" class="radio-label">${WaktuKuliah}</label>
+                          <label for="waktu-perkuliahan-${WaktuKuliah}" class="radio-label">
+                            ${WaktuKuliah} ${WaktuKuliahAvailable ? '' : '*'}
+                            ${WaktuKuliahAvailable ? '' : '<small style="color:#999;">belum tersedia</small>'}
+                          </label>
                         </div>
                       `);
+
                     });
                   },
                   error: function (xhr, status, error) {
