@@ -272,7 +272,18 @@ $msg = $_GET['msg'] ?? '';
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Nomor Hp/Whatsapp <span class="required">*</span></label>
-                        <input type="text" class="form-control" name="nomor_hp" id="nomor_hp" required />
+                        <input 
+                            type="text"
+                            class="form-control"
+                            name="nomor_hp"
+                            id="nomor_hp"
+                            required
+                            inputmode="numeric"
+                            pattern="[0-9]{9,15}"
+                            maxlength="15"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+
                     </div>
                 </div>
                 <div class="col-md-12">
