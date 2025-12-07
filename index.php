@@ -1,3 +1,12 @@
+<?php
+date_default_timezone_set('Asia/Jakarta');
+$batas = strtotime("2025-12-07 23:59:00");
+$sekarang = time();
+if ($sekarang > $batas) {
+    header("Location: https://admission.paramadina.ac.id/v2/");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
   <head>

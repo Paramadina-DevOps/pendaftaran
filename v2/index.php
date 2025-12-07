@@ -126,7 +126,7 @@
             </nav>
 
             <div class="login-section">
-              <a href="https://paramadina.siakadcloud.com/spmbfront/login" class="login-button">Masuk</a>
+              <a href="#" class="login-button">Masuk</a>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@
     <div class="hero-section">
       <div class="hero-content">
         <h1 class="hero-title">
-          Portal Pendaftaran Mahasiswa Baru V2 Testing
+          Portal Pendaftaran Mahasiswa Baru V2
         </h1>
         <p class="hero-subtitle">
           Formulir pendaftaran mahasiswa baru di Universitas Paramadina.
@@ -377,7 +377,7 @@ $msg = $_GET['msg'] ?? '';
         // const semesterMulai = "Semester Ganjil 2025";
         // const semesterSelesai = "Semester Genap 2025";
 
-        $("#text-gelombang").text(`Testing ${gelombang}`);
+        $("#text-gelombang").text(`Gelombang ${gelombang}`);
         // $("#text-semester").text(`${semesterMulai} - ${semesterSelesai}`);
         
         // GET JENJANG
