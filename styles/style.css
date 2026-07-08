@@ -131,7 +131,23 @@ select {
 .radio-input:disabled + .radio-label {
   color: #aaa; /* Warna teks menjadi abu-abu */
   cursor: not-allowed; /* Pointer berubah menjadi tidak diizinkan */
-  opacity: 0.6; /* Kurangi opacity */
+  opacity: 0.65; /* Kurangi opacity sedikit */
+  background-color: #fafafa;
+}
+
+/* Badge Belum Dibuka */
+.radio-input:disabled + .radio-label::after {
+  content: "Belum Dibuka";
+  display: inline-block;
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  margin-left: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border: 1px solid #ffcdd2;
 }
 
 /* Efek hover */
@@ -611,5 +627,160 @@ select {
 
   .main-nav {
     display: flex !important; /* Always show nav on desktop */
+  }
+}
+
+/* Form Wizard Styles */
+.wizard-progress-container {
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.wizard-progress {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.wizard-progress::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e0e0e0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.wizard-progress .step {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+.wizard-progress .step.active {
+  border-color: #007bff;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.wizard-step {
+  display: none;
+  animation: fadeIn 0.4s;
+}
+
+.wizard-step.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wizard-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
+}
+
+.btn-prev, .btn-next {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-prev {
+  background-color: #f1f3f5;
+  color: #495057;
+}
+
+.btn-prev:hover {
+  background-color: #e9ecef;
+}
+
+.btn-next {
+  background-color: #007bff;
+  color: white;
+  margin-left: auto;
+}
+
+.btn-next:hover {
+  background-color: #0056b3;
+}
+
+.btn-next:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Mobile Responsive Adjustments for Wizard */
+@media (max-width: 768px) {
+  .wizard-progress .step {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+  
+  .wizard-progress-container {
+    margin-bottom: 20px;
+  }
+  
+  #wizard-selection-summary {
+    font-size: 0.75rem !important;
+    padding: 10px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .btn-prev, .btn-next {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .btn-prev {
+    margin-right: 10px;
+  }
+  
+  .btn-next {
+    margin-left: 0;
+  }
+  
+  .wizard-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .radio-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .radio-label {
+    width: 100%;
+    justify-content: flex-start;
   }
 }

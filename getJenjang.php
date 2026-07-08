@@ -26,6 +26,20 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
     // Ambil hasil sebagai array asosiatif
     $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    // Check if S3 exists
+    $hasS3 = false;
+    foreach ($rows as $row) {
+        if ($row['jenjang_program_studi'] === 'S3') {
+            $hasS3 = true;
+            break;
+        }
+    }
+    
+    // Add S3 manually if not exists
+    if (!$hasS3) {
+        $rows[] = ['jenjang_program_studi' => 'S3'];
+    }
 
     // Tampilkan hasil dalam format JSON
     echo json_encode($rows);

@@ -15,6 +15,12 @@
                     // Ambil semua hasil sebagai array multidimensi
                     $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+                    if ($jenjang === 'S3') {
+                        $rows = [
+                            ['id_program_studi' => '99999', 'program_studi' => 'Ilmu Manajemen']
+                        ];
+                    }
+
                     // Cetak hasil
                     echo json_encode($rows); // Mengembalikan dalam format JSON jika ingin digunakan di JavaScript
                 } else {

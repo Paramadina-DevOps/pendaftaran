@@ -129,148 +129,93 @@ if ($sekarang > $batas) {
             Semester Genap 2025- 2026 dan Semester Gasal 2026-2027
            </p>
         </div>
-        <!-- Wizard Progress -->
-        <div class="wizard-progress-container">
-          <ul class="wizard-progress">
-            <li class="step active" id="indicator-1">1</li>
-            <li class="step" id="indicator-2">2</li>
-            <li class="step" id="indicator-3">3</li>
-            <li class="step" id="indicator-4">4</li>
-            <li class="step" id="indicator-5">5</li>
-            <li class="step" id="indicator-6">6</li>
-            <li class="step" id="indicator-7">7</li>
-          </ul>
-        </div>
-
-        <!-- Summary of selections -->
-        <div id="wizard-selection-summary" style="display: none; background: #e9ecef; border-left: 4px solid #007bff; padding: 12px 15px; margin-bottom: 25px; border-radius: 4px; font-size: 13px; color: #333; line-height: 1.5;"></div>
-
-        <div class="wizard-step active" id="step-1">
-          <div class="form-radio">
-            <label>Pilih Jenjang <span class="required">*</span></label>
-            <div id="jenjang-options" class="radio-group">
-            </div>
-          </div>
-          <div class="wizard-buttons">
-            <button type="button" class="btn-next" onclick="goToStep(2)">Selanjutnya</button>
+        <div class="form-radio">
+          <!-- Pilih Jenjang -->
+          <label>Pilih Jenjang <span class="required">*</span></label>
+          <div id="jenjang-options" class="radio-group">
           </div>
         </div>
 
         <!-- Pilih Program Studi -->
-        <div id="prodi-container" class="wizard-step hidden">
-          <div class="form-radio">
-            <label>Pilih Program Studi <span class="required">*</span></label>
-            <div id="program-studi-options" class="radio-group">
-              <!-- Radio button akan ditambahkan melalui JavaScript -->
-            </div>
-          </div>
-          <div class="wizard-buttons">
-            <button type="button" class="btn-prev" onclick="goToStep(1)">Kembali</button>
-            <button type="button" class="btn-next" onclick="goToStep(3)">Selanjutnya</button>
+        <div id="prodi-container" class="hidden form-radio">
+          <label>Pilih Program Studi <span class="required">*</span></label>
+          <div id="program-studi-options" class="radio-group">
+            <!-- Radio button akan ditambahkan melalui JavaScript -->
           </div>
         </div>
 
         <!-- Pilih Lokasi Kampus -->
-        <div id="lokasi-kampus-container" class="wizard-step hidden">
-          <div class="form-radio">
-            <label>Pilih Lokasi Kampus <span class="required">*</span></label>
-            <div id="lokasi-kampus-options" class="lokasi-options radio-group">
-            </div>
-          </div>
-          <div class="wizard-buttons">
-            <button type="button" class="btn-prev" onclick="goToStep(2)">Kembali</button>
-            <button type="button" class="btn-next" onclick="goToStep(4)">Selanjutnya</button>
+        <div id="lokasi-kampus-container" class="hidden form-radio">
+          <label>Pilih Lokasi Kampus <span class="required">*</span></label>
+          <div id="lokasi-kampus-options" class="lokasi-options radio-group">
           </div>
         </div>
 
         <!-- Pilih Jenis Pendaftaran -->
-        <div id="jenis-pendaftaran-container" class="wizard-step hidden">
-          <div class="form-radio">
-            <label>Pilih Jenis Pendaftaran <span class="required">*</span></label>
-            <div
-              id="jenis-pendaftaran-options"
-              class="pendaftaran-options radio-group"
-            >
-            </div>
-          </div>
-          <div class="wizard-buttons">
-            <button type="button" class="btn-prev" onclick="goToStep(3)">Kembali</button>
-            <button type="button" class="btn-next" onclick="goToStep(5)">Selanjutnya</button>
+        <div id="jenis-pendaftaran-container" class="hidden form-radio">
+          <label>Pilih Jenis Pendaftaran <span class="required">*</span></label>
+          <div
+            id="jenis-pendaftaran-options"
+            class="pendaftaran-options radio-group"
+          >
           </div>
         </div>
 
         <!-- Pilih Waktu Perkuliahan -->
-        <div id="waktu-perkuliahan-container" class="wizard-step hidden">
-          <div class="form-radio">
-            <label for="waktu-perkuliahan"
-              >Waktu Perkuliahan <span class="required">*</span></label
-            >
-            <div
-              id="waktu-perkuliahan-options"
-              class="waktu-perkuliahan-options radio-group"
-            >
-            </div>
-          </div>
-          <div class="wizard-buttons">
-            <button type="button" class="btn-prev" onclick="goToStep(4)">Kembali</button>
-            <button type="button" class="btn-next" onclick="goToStep(6)">Selanjutnya</button>
+        <div id="waktu-perkuliahan-container" class="hidden form-radio">
+          <label for="waktu-perkuliahan"
+            >Waktu Perkuliahan <span class="required">*</span></label
+          >
+          <div
+            id="waktu-perkuliahan-options"
+            class="waktu-perkuliahan-options radio-group"
+          >
           </div>
         </div>
 
         <!-- Pilih Jalur Masuk -->
-        <div id="jalur-masuk-container" class="wizard-step hidden">
-          <div class="form-radio">
-            <label>Jalur Masuk <span class="required">*</span></label>
-            <div id="jalur-masuk-options"></div>
-            <div id="jalur-beasiswa-inline" class="hr-inline">
-              <h5>Beasiswa</h5>
-              <hr>
-            </div>
-            <div id="jalur-masuk-options-beasiswa" class="radio-group"></div>
-            <div id="jalur-khusus-inline" class="hr-inline">
-              <h5>Jalur Khusus</h5>
-              <hr>
-            </div>
-            <div id="jalur-masuk-options-khusus" class="radio-group"></div>
+        <div id="jalur-masuk-container" class="hidden form-radio">
+          <label>Jalur Masuk <span class="required">*</span></label>
+          <div id="jalur-masuk-options"></div>
+          <div id="jalur-beasiswa-inline" class="hr-inline">
+            <h5>Beasiswa</h5>
+            <hr>
           </div>
-          <div class="wizard-buttons">
-            <button type="button" class="btn-prev" onclick="goToStep(5)">Kembali</button>
-            <button type="button" class="btn-next" onclick="goToStep(7)">Selanjutnya</button>
+          <div id="jalur-masuk-options-beasiswa" class="radio-group"></div>
+          <div id="jalur-khusus-inline" class="hr-inline">
+            <h5>Jalur Khusus</h5>
+            <hr>
           </div>
+          <div id="jalur-masuk-options-khusus" class="radio-group"></div>
         </div>
 
-        <div class="wizard-step hidden" id="card-container-wrapper">
-          <div class="card-container">
-            <div class="card hidden" id="card-container">
-              <h3>
-                <span id="jenjang-dipilih"></span>
+        <div class="card-container">
+          <div class="card hidden" id="card-container">
+            <h3>
+              <span id="jenjang-dipilih"></span>
+              -
+              <span id="jalur-dipilih"></span>
+              <span id="gelombang-dipilih"></span>
+            </h3>
+            <p>
+              <span id="waktu-kuliah-dipilih"></span>
+            </p>
+            <span class="location">
+              <span id="kampus-dipilih"></span>
+            </span>
+            <div class="info">
+              <span>
+                <i class="calendar-icon"></i>
+                <span id="tanggal_awal_pendaftaran"></span>
                 -
-                <span id="jalur-dipilih"></span>
-                <span id="gelombang-dipilih"></span>
-              </h3>
-              <p>
-                <span id="waktu-kuliah-dipilih"></span>
-              </p>
-              <span class="location">
-                <span id="kampus-dipilih"></span>
-              </span>
-              <div class="info">
-                <span>
-                  <i class="calendar-icon"></i>
-                  <span id="tanggal_awal_pendaftaran"></span>
-                  -
-                  <span id="tanggal_akhir_pendaftaran"></span>
-                  </span>
-                <span class="fee">Biaya Daftar <b id="biaya-dipilih"></b></span>
-              </div>
-              <input type="hidden" id="key" name="key" />
-              <input type="hidden" id="prodipilihan" name="prodipilihan" />
-              <input type="hidden" name="act" value="detail" />
-              <div class="wizard-buttons">
-                <button type="button" class="btn-prev" onclick="goToStep(6)">Kembali</button>
-                <button class="register-btn">Daftar Sekarang</button>
-              </div>
+                <span id="tanggal_akhir_pendaftaran"></span>
+                </span>
+              <span class="fee">Biaya Daftar <b id="biaya-dipilih"></b></span>
             </div>
+            <input type="hidden" id="key" name="key" />
+            <input type="hidden" id="prodipilihan" name="prodipilihan" />
+            <input type="hidden" name="act" value="detail" />
+            <button class="register-btn">Daftar Sekarang</button>
           </div>
         </div>
       </form>
@@ -423,7 +368,7 @@ if ($sekarang > $batas) {
                   },
                   success: function (response) {
                     const data = JSON.parse(response);
-                    const allCampuses = ['Cipayung', 'Cikarang'];
+                    const allCampuses = ['Cipayung', 'Cikarang', 'Kuningan'];
 
                     const lokasiKampusOptions = $("#lokasi-kampus-options");
                     lokasiKampusOptions.empty();
@@ -466,7 +411,7 @@ if ($sekarang > $batas) {
                   },
                   success: function (response) {
                     const data = JSON.parse(response);
-                    const allCampuses = ['Cipayung', 'Cikarang'];
+                    const allCampuses = ['Cipayung', 'Cikarang', 'Kuningan'];
 
                     const lokasiKampusOptions = $("#lokasi-kampus-options");
                     lokasiKampusOptions.empty();
@@ -573,23 +518,22 @@ if ($sekarang > $batas) {
             // END GET JENIS PENDAFTARAN
             
             jenisPendaftaranContainer.removeClass("hidden");
-          } else if(jenjang === "S2" || jenjang === "S3") {
-           // Tampilkan opsi statis untuk jenjang S2/S3
+          } else if(jenjang === "S2") {
+           // Tampilkan opsi statis untuk jenjang S2
               const jenisPendaftaranOptions = $("#jenis-pendaftaran-options");
               jenisPendaftaranOptions.empty();
-              const labelText = jenjang === "S3" ? "Lulusan S2" : "Lulusan S1";
 
               jenisPendaftaranOptions.append(`
                 <div>
                   <input 
                     type="radio" 
-                    id="jenis-pendaftaran-${labelText.toLowerCase().replace(' ', '-')}" 
+                    id="jenis-pendaftaran-lulusan-s1" 
                     name="jenis-pendaftaran" 
-                    value="${labelText.toLowerCase().replace(' ', '-')}" 
+                    value="lulusan-s1" 
                     class="radio-input"
                   >
-                  <label for="jenis-pendaftaran-${labelText.toLowerCase().replace(' ', '-')}" class="radio-label">
-                    ${labelText}
+                  <label for="jenis-pendaftaran-lulusan-s1" class="radio-label">
+                    Lulusan S1
                   </label>
                 </div>
               `);
@@ -1136,131 +1080,6 @@ if ($sekarang > $batas) {
           }).format(date);
         }
 
-      });
-    </script>
-    <script>
-      // Wizard Navigation Logic
-      const wizardSteps = [
-        "step-1", // Jenjang (wrapper id is step-1)
-        "prodi-container",
-        "lokasi-kampus-container",
-        "jenis-pendaftaran-container",
-        "waktu-perkuliahan-container",
-        "jalur-masuk-container",
-        "card-container-wrapper"
-      ];
-
-      function goToStep(stepNumber) {
-        // Validation check if moving forward
-        const currentActiveIndex = wizardSteps.findIndex(id => document.getElementById(id).classList.contains('active'));
-        const targetIndex = stepNumber - 1;
-
-        if (currentActiveIndex !== -1 && targetIndex > currentActiveIndex) {
-          const fields = ['jenjang', 'program-studi', 'lokasi-kampus', 'jenis-pendaftaran', 'waktu-perkuliahan', 'jalur-masuk'];
-          
-          if (currentActiveIndex < fields.length) {
-            const fieldName = fields[currentActiveIndex];
-            const checked = document.querySelector(`input[name="${fieldName}"]:checked`);
-            
-            if (!checked) {
-              alert("Silakan pilih salah satu opsi terlebih dahulu untuk melanjutkan.");
-              return; // Stop navigation
-            }
-          }
-        }
-
-        // Hide all steps
-        document.querySelectorAll('.wizard-step').forEach(el => {
-          el.classList.remove('active');
-        });
-        
-        // Show current step
-        const stepId = wizardSteps[stepNumber - 1];
-        const stepEl = document.getElementById(stepId);
-        if(stepEl) {
-          stepEl.classList.add('active');
-          // Also remove hidden just in case original JS added it
-          stepEl.classList.remove('hidden');
-        }
-
-        // Update progress bar
-        for (let i = 1; i <= 7; i++) {
-          const indicator = document.getElementById('indicator-' + i);
-          if (i <= stepNumber) {
-            indicator.classList.add('active');
-          } else {
-            indicator.classList.remove('active');
-          }
-        }
-        
-        updateWizardSummary();
-        setTimeout(checkNextButtonState, 50);
-      }
-      
-      function checkNextButtonState() {
-        const currentActiveIndex = wizardSteps.findIndex(id => document.getElementById(id).classList.contains('active'));
-        if (currentActiveIndex === -1) return;
-        
-        const stepId = wizardSteps[currentActiveIndex];
-        const stepEl = document.getElementById(stepId);
-        if (!stepEl) return;
-        
-        const nextBtn = stepEl.querySelector('.btn-next');
-        if (!nextBtn) return;
-
-        const fields = ['jenjang', 'program-studi', 'lokasi-kampus', 'jenis-pendaftaran', 'waktu-perkuliahan', 'jalur-masuk'];
-        
-        if (currentActiveIndex < fields.length) {
-          const fieldName = fields[currentActiveIndex];
-          const checked = document.querySelector(`input[name="${fieldName}"]:checked`);
-          
-          if (checked) {
-             nextBtn.disabled = false;
-          } else {
-             nextBtn.disabled = true;
-          }
-        }
-      }
-
-      function updateWizardSummary() {
-        const selections = [];
-        const fields = [
-          { name: 'jenjang', label: 'Jenjang' },
-          { name: 'program-studi', label: 'Prodi' },
-          { name: 'lokasi-kampus', label: 'Kampus' },
-          { name: 'jenis-pendaftaran', label: 'Jenis' },
-          { name: 'waktu-perkuliahan', label: 'Waktu' },
-          { name: 'jalur-masuk', label: 'Jalur' }
-        ];
-
-        fields.forEach(field => {
-          const checked = document.querySelector(`input[name="${field.name}"]:checked`);
-          if (checked && checked.nextElementSibling) {
-             selections.push(`<b>${field.label}:</b> ${checked.nextElementSibling.textContent.trim()}`);
-          }
-        });
-
-        const summaryEl = document.getElementById('wizard-selection-summary');
-        if (selections.length > 0) {
-          summaryEl.style.display = 'block';
-          summaryEl.innerHTML = "<strong>Data Pilihan Anda:</strong><br>" + selections.join(' <span style="margin:0 8px;color:#aaa;">|</span> ');
-        } else {
-          summaryEl.style.display = 'none';
-          summaryEl.innerHTML = '';
-        }
-      }
-
-      // Initialize first step as active on page load
-      document.addEventListener("DOMContentLoaded", function() {
-        goToStep(1);
-        
-        // Listen to changes to update summary dynamically
-        document.addEventListener('change', function(e) {
-          if (e.target && e.target.classList.contains('radio-input')) {
-            updateWizardSummary();
-            checkNextButtonState();
-          }
-        });
       });
     </script>
     <script>
